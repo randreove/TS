@@ -1,5 +1,12 @@
 {
-  "image": "mcr.microsoft.com/vscode/devcontainers/python:0-3.11-bullseye",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/git-lfs:1": {
+      "autoPull": true
+    }
+  },
   "hostRequirements": {
     "cpus": 4
   },
@@ -44,7 +51,5 @@
       },
       "remoteUser": "vscode"
     }
-  },
-  "initializeCommand": "apt-get update && apt-get install -y git-lfs && git lfs install",
-  "postAttachCommand": "git lfs pull"
+  }
 }
